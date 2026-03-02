@@ -182,7 +182,7 @@ export default function ContactPage() {
                                 Get immediate answers to your questions. Our AI agent is available 24/7, with human support when you need it.
                             </p>
                             <a
-                                href="https://wa.me/94XXXXXXXXX?text=Hi%20Popylabs!%20I%27d%20like%20to%20discuss%20my%20project."
+                                href="https://wa.me/94789961029?text=Hi%20Popylabs!%20I%27d%20like%20to%20discuss%20my%20project."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-whatsapp w-full justify-center"

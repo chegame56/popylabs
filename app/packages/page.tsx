@@ -594,7 +594,7 @@ export default function PackagesPage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="https://wa.me/94773737373"
+                                href="https://wa.me/94789961029"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-whatsapp justify-center"
@@ -629,8 +629,8 @@ export default function PackagesPage() {
                                 key={id}
                                 onClick={() => scrollToSection(id)}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeSection === id
-                                        ? 'bg-gradient-to-r from-accent-gold to-orange-rust text-navy-deep font-bold'
-                                        : 'text-cream/70 hover:text-cream hover:bg-white/10'
+                                    ? 'bg-gradient-to-r from-accent-gold to-orange-rust text-navy-deep font-bold'
+                                    : 'text-cream/70 hover:text-cream hover:bg-white/10'
                                     }`}
                             >
                                 <Icon className="text-sm" />

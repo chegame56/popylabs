@@ -53,7 +53,7 @@ export default function CTASection() {
                         </Link>
 
                         <a
-                            href="https://wa.me/94XXXXXXXXX?text=Hi%20Popylabs!%20I%27m%20ready%20to%20scale%20my%20brand."
+                            href="https://wa.me/94789961029?text=Hi%20Popylabs!%20I%27m%20ready%20to%20scale%20my%20brand."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-whatsapp text-lg justify-center"
