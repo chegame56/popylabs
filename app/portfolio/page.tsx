@@ -51,6 +51,15 @@ export default function PortfolioPage() {
 
             {/* Case Studies Grid */}
             <section className="section">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                        Case <span className="gradient-text">Studies</span>
+                    </h2>
+                    <p className="text-sky-blue text-lg max-w-2xl mx-auto">
+                        In-depth looks at how we've helped our clients achieve their goals and scale their businesses.
+                    </p>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {CASE_STUDIES.map((study) => (
                         <Link
