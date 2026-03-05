@@ -257,3 +257,25 @@
 .pulse-glow {
   animation: pulseGlow 3s ease-in-out infinite;
 }
+
+/* Infinite Scrolling Carousel */
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollX 80s linear infinite;
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+
+.carousel-wrapper:hover .animate-scroll {
+  animation-play-state: paused;
+}

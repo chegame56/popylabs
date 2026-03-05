@@ -49,6 +49,51 @@ export default function PortfolioPage() {
                 </div>
             </section>
 
+            {/* Product Photography Carousel */}
+            <section className="py-20 bg-navy-deep/80 relative overflow-hidden border-y border-white/5">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                        Product <span className="gradient-text">Photography</span>
+                    </h2>
+                    <p className="text-sky-blue text-lg max-w-2xl mx-auto px-4">
+                        High-quality visuals that make your products irresistible.
+                    </p>
+                </div>
+
+                <div className="relative flex overflow-hidden group carousel-wrapper">
+                    <div className="flex gap-4 min-w-max animate-scroll">
+                        {/* Set 1 */}
+                        {[...Array(21)].map((_, i) => (
+                            <div key={`set1-${i + 1}`} className="w-[250px] md:w-[350px] aspect-[4/5] relative rounded-lg overflow-hidden glass-dark shrink-0">
+                                <Image
+                                    src={`/portfolio/product_photography/product_photography_${i + 1}.jpg`}
+                                    alt={`Product Photography ${i + 1}`}
+                                    fill
+                                    className="object-cover hover:scale-110 transition-transform duration-700"
+                                    sizes="(max-width: 768px) 250px, 350px"
+                                />
+                            </div>
+                        ))}
+                        {/* Set 2 — identical duplicate for seamless loop */}
+                        {[...Array(21)].map((_, i) => (
+                            <div key={`set2-${i + 1}`} className="w-[250px] md:w-[350px] aspect-[4/5] relative rounded-lg overflow-hidden glass-dark shrink-0">
+                                <Image
+                                    src={`/portfolio/product_photography/product_photography_${i + 1}.jpg`}
+                                    alt={`Product Photography ${i + 1}`}
+                                    fill
+                                    className="object-cover hover:scale-110 transition-transform duration-700"
+                                    sizes="(max-width: 768px) 250px, 350px"
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Gradient overlays to soften edges */}
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-deep to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-deep to-transparent z-10 pointer-events-none" />
+                </div>
+            </section>
+
             {/* Case Studies Grid */}
             <section className="section">
                 <div className="text-center mb-12">
