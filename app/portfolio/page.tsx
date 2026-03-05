@@ -18,6 +18,37 @@ export default function PortfolioPage() {
                 </p>
             </section>
 
+            {/* Behind The Scenes Videos */}
+            <section className="section relative overflow-hidden">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                        Behind The <span className="gradient-text">Scenes</span>
+                    </h2>
+                    <p className="text-sky-blue text-lg max-w-2xl mx-auto">
+                        A sneak peek into our process and the magic behind our premium solutions.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                    {[1, 2, 3, 4].map((num) => (
+                        <div key={num} className="group glass-dark rounded-2xl overflow-hidden relative animated-border p-1 hover:shadow-2xl hover:shadow-accent-gold/20 transition-all duration-300">
+                            <div className="relative w-full aspect-video rounded-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 bg-navy-darker">
+                                <video
+                                    src={`/portfolio/bts-${num}.mp4`}
+                                    className="w-full h-full object-cover"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    controls
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* Case Studies Grid */}
             <section className="section">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
