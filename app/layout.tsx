@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/features/WhatsAppButton'
 import ActiveBackgroundEffects from '@/components/features/ActiveBackgroundEffects'
+import { Analytics } from '@vercel/analytics/next'
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
                 <Footer />
                 <WhatsAppButton />
                 <ActiveBackgroundEffects />
+                <Analytics />
             </body>
         </html>
     )
