@@ -94,8 +94,8 @@ export default function Hero() {
                                 <div className="glass-dark rounded-xl p-3 border border-accent-gold/30 hover:border-accent-gold/60 transition-all duration-300 hover:scale-105">
                                     {/* Card Image */}
                                     <div className="w-full h-24 bg-gradient-to-br from-steel-blue to-sky-blue rounded-lg mb-2 flex items-center justify-center overflow-hidden relative">
-                                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
-                                        <span className="text-4xl relative z-10">🎨</span>
+                                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 z-10"></div>
+                                        <Image src="/recent_project.jpeg" alt="Recent Projects" fill className="object-cover" />
                                     </div>
 
                                     {/* Card Label */}
