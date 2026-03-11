@@ -71,10 +71,10 @@ export default function Hero() {
                             {/* Social Media Icons */}
                             <div className="flex gap-3 justify-center lg:justify-end w-full">
                                 {[
-                                    { Icon: FaFacebook, label: 'Facebook', href: '#' },
-                                    { Icon: FaInstagram, label: 'Instagram', href: '#' },
-                                    { Icon: FaTiktok, label: 'TikTok', href: '#' },
-                                    { Icon: FaYoutube, label: 'YouTube', href: '#' },
+                                    { Icon: FaFacebook, label: 'Facebook', href: 'https://www.facebook.com/popylabs/' },
+                                    { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/popylabs/' },
+                                    { Icon: FaTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@popylabs' },
+                                    { Icon: FaYoutube, label: 'YouTube', href: 'https://www.youtube.com/@Popylabs' },
                                 ].map((social, index) => (
                                     <a
                                         key={index}

@@ -7,42 +7,42 @@ export default function LeadMagnets() {
             icon: '/icons/free-resources/audit.png',
             title: 'Free Social Media Audit',
             description: 'Get a comprehensive analysis of your current social media presence and actionable recommendations.',
-            link: '/resources/free-audit',
+            link: '/contact',
             color: 'from-blue-500 to-cyan-500'
         },
         {
             icon: '/icons/free-resources/checklist.png',
             title: 'Digital Marketing Checklist',
             description: 'Complete checklist for launching and managing successful marketing campaigns for SMEs.',
-            link: '/resources',
+            link: '/contact',
             color: 'from-green-500 to-emerald-500'
         },
         {
             icon: '/icons/free-resources/platform-selection.png',
             title: 'Platform Selection Guide',
             description: 'Interactive quiz to discover which social media platforms are best for your business.',
-            link: '/resources',
+            link: '/contact',
             color: 'from-purple-500 to-pink-500'
         },
         {
             icon: '/icons/free-resources/roi-calculator.png',
             title: 'ROI Calculator',
             description: 'Calculate your potential return on investment from digital marketing campaigns.',
-            link: '/resources',
+            link: '/contact',
             color: 'from-accent-gold to-yellow-500'
         },
         {
             icon: '/icons/free-resources/video-marketing.png',
             title: 'Video Marketing Guide',
             description: 'Best practices for creating engaging video content on TikTok, Reels, and YouTube.',
-            link: '/resources',
+            link: '/contact',
             color: 'from-red-500 to-orange-500'
         },
         {
             icon: '/icons/free-resources/budget.png',
             title: 'SME Budget Template',
             description: 'Free marketing budget spreadsheet template designed specifically for growing businesses.',
-            link: '/resources',
+            link: '/contact',
             color: 'from-indigo-500 to-blue-500'
         }
     ]

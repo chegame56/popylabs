@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaTiktok, FaFacebook, FaLinkedin, FaYoutube } from 'react-icons/fa'
+import { FaTiktok, FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa'
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
@@ -35,18 +35,19 @@ export default function Footer() {
         {
             title: 'Resources',
             links: [
-                { href: '/resources/free-audit', label: 'Free Social Media Audit' },
-                { href: '/resources', label: 'Marketing Resources' },
-                { href: '/resources/blog', label: 'Blog' },
+                { href: '/contact', label: 'Free Social Media Audit' },
+                { href: '/contact', label: 'Marketing Resources' },
+                { href: 'https://blog.popylabs.com/', label: 'Blog' },
             ]
         }
     ]
 
     const socialLinks = [
-        { name: 'TikTok', icon: FaTiktok, color: '#000000', href: '#' },
-        { name: 'Facebook', icon: FaFacebook, color: '#1877F2', href: '#' },
-        { name: 'LinkedIn', icon: FaLinkedin, color: '#0A66C2', href: '#' },
-        { name: 'YouTube', icon: FaYoutube, color: '#FF0000', href: '#' },
+        { name: 'Instagram', icon: FaInstagram, color: '#E1306C', href: 'https://www.instagram.com/popylabs/' },
+        { name: 'TikTok', icon: FaTiktok, color: '#000000', href: 'https://www.tiktok.com/@popylabs' },
+        { name: 'Facebook', icon: FaFacebook, color: '#1877F2', href: 'https://www.facebook.com/popylabs/' },
+        { name: 'LinkedIn', icon: FaLinkedin, color: '#0A66C2', href: 'https://www.linkedin.com/company/popylabs' },
+        { name: 'YouTube', icon: FaYoutube, color: '#FF0000', href: 'https://www.youtube.com/@Popylabs' },
     ]
 
     return (
