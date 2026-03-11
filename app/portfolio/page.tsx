@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { CASE_STUDIES } from '@/lib/constants'
-
+import WebDevGallery from './WebDevGallery'
+import LazyVideo from './LazyVideo'
 export default function PortfolioPage() {
     const industries = ['All', ...Array.from(new Set(CASE_STUDIES.map(study => study.industry)))]
     const services = ['All', ...Array.from(new Set(CASE_STUDIES.map(study => study.service)))]
@@ -33,15 +34,7 @@ export default function PortfolioPage() {
                     {[1, 2, 3, 4].map((num) => (
                         <div key={num} className="group glass-dark rounded-2xl overflow-hidden relative animated-border p-1 hover:shadow-2xl hover:shadow-accent-gold/20 transition-all duration-300">
                             <div className="relative w-full aspect-video rounded-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 bg-navy-darker">
-                                <video
-                                    src={`/portfolio/bts-${num}.mp4`}
-                                    className="w-full h-full object-cover"
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    controls
-                                />
+                                <LazyVideo src={`/portfolio/bts-${num}.mp4`} className="w-full h-full" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                             </div>
                         </div>
@@ -92,6 +85,20 @@ export default function PortfolioPage() {
                     <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-deep to-transparent z-10 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-deep to-transparent z-10 pointer-events-none" />
                 </div>
+            </section>
+
+            {/* Web Development Grid */}
+            <section className="section bg-navy-darker">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                        Web <span className="gradient-text">Development</span>
+                    </h2>
+                    <p className="text-sky-blue text-lg max-w-2xl mx-auto">
+                        Captivating digital experiences that convert. Combining stunning aesthetics with seamless functionality.
+                    </p>
+                </div>
+
+                <WebDevGallery />
             </section>
 
             {/* Case Studies Grid */}
