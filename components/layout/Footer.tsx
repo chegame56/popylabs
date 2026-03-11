@@ -71,6 +71,8 @@ export default function Footer() {
                                         key={social.name}
                                         href={social.href}
                                         aria-label={social.name}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="w-10 h-10 rounded-full bg-white hover:scale-110 
                                flex items-center justify-center transition-all duration-300"
                                         style={{ backgroundColor: 'white' }}
@@ -96,6 +98,7 @@ export default function Footer() {
                                     <li key={link.href}>
                                         <Link
                                             href={link.href}
+                                            {...(link.href.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                                             className="text-sky-blue hover:text-cream transition-colors duration-200 text-sm"
                                         >
                                             {link.label}
