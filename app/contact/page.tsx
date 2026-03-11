@@ -17,13 +17,39 @@ export default function ContactPage() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // TODO: Implement form submission
-        // For now, just simulate submission
-        await new Promise(resolve => setTimeout(resolve, 1500))
+        try {
+            // We are using Web3Forms (A free & simple email service)
+            // Step 1: Go to https://web3forms.com/
+            // Step 2: Enter your email to get an access key
+            // Step 3: Replace "YOUR_ACCESS_KEY_HERE" below with your actual key
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "051974cf-b208-4d5f-9f66-97f85a7e87fc",
+                    subject: `New Contact from ${formData.name}`,
+                    from_name: formData.name,
+                    ...formData
+                }),
+            });
 
-        alert('Thank you! We will contact you within 24 hours.')
-        setFormData({ name: '', email: '', company: '', service: '', message: '' })
-        setIsSubmitting(false)
+            const result = await response.json();
+
+            if (response.status === 200) {
+                alert('Thank you! We will contact you within 24 hours.')
+                setFormData({ name: '', email: '', company: '', service: '', message: '' })
+            } else {
+                alert(result.message || 'Something went wrong. Please try again.')
+            }
+        } catch (error) {
+            console.error(error)
+            alert('Something went wrong. Please try again later.')
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
