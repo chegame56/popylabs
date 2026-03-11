@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import HCaptcha from '@hcaptcha/react-hcaptcha'
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -9,12 +10,27 @@ export default function ContactPage() {
         email: '',
         company: '',
         service: '',
-        message: ''
+        message: '',
+        botcheck: false
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [captchaToken, setCaptchaToken] = useState<string>('')
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+        
+        // Spam Protection: Honeypot check
+        if (formData.botcheck) {
+            alert("Spam detected!");
+            return;
+        }
+
+        // Spam Protection: hCaptcha check
+        if (!captchaToken) {
+            alert("Please complete the CAPTCHA first.")
+            return
+        }
+
         setIsSubmitting(true)
 
         try {
@@ -32,6 +48,7 @@ export default function ContactPage() {
                     access_key: "051974cf-b208-4d5f-9f66-97f85a7e87fc",
                     subject: `New Contact from ${formData.name}`,
                     from_name: formData.name,
+                    "h-captcha-response": captchaToken,
                     ...formData
                 }),
             });
@@ -40,7 +57,8 @@ export default function ContactPage() {
 
             if (response.status === 200) {
                 alert('Thank you! We will contact you within 24 hours.')
-                setFormData({ name: '', email: '', company: '', service: '', message: '' })
+                setFormData({ name: '', email: '', company: '', service: '', message: '', botcheck: false })
+                setCaptchaToken('') // Reset captcha
             } else {
                 alert(result.message || 'Something went wrong. Please try again.')
             }
@@ -53,7 +71,13 @@ export default function ContactPage() {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+        const { name, value, type } = e.target;
+        if (type === 'checkbox') {
+            const checked = (e.target as HTMLInputElement).checked;
+            setFormData(prev => ({ ...prev, [name]: checked }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
     }
 
     return (
@@ -170,6 +194,25 @@ export default function ContactPage() {
                              focus:border-accent-gold focus:outline-none focus:ring-2 focus:ring-accent-gold/20
                              transition-all resize-none"
                                         placeholder="Describe your goals, challenges, and what you're looking to achieve..."
+                                    />
+                                </div>
+
+                                {/* Honeypot - Invisible for regular users, target for bots */}
+                                <input 
+                                    type="checkbox" 
+                                    name="botcheck" 
+                                    className="hidden" 
+                                    style={{ display: 'none' }}
+                                    checked={formData.botcheck}
+                                    onChange={handleChange}
+                                />
+
+                                {/* hCaptcha */}
+                                <div className="flex justify-center sm:justify-start">
+                                    <HCaptcha
+                                        sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                                        reCaptchaCompat={false}
+                                        onVerify={(token: string) => setCaptchaToken(token)}
                                     />
                                 </div>
 
